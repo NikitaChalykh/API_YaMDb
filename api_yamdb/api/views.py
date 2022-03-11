@@ -5,8 +5,8 @@ from rest_framework import filters, permissions, status, viewsets
 from rest_framework.decorators import action, api_view
 from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import RefreshToken
-
 from reviews.models import Category, Comment, Genre, Review, Title, User
+
 from .filters import TitleFilter
 from .mixins import CreateListDestroyViewSet
 from .permissions import (AdminOrReadOnly, IsAdminOrStaffPermission,
@@ -63,8 +63,7 @@ class ReviewViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         title_id = self.kwargs.get('title_id')
         title = get_object_or_404(Title, id=title_id)
-        new_queryset = title.reviews.all()
-        return new_queryset
+        return title.reviews.all()
 
 
 class CommentViewSet(viewsets.ModelViewSet):
@@ -85,8 +84,7 @@ class CommentViewSet(viewsets.ModelViewSet):
         title = get_object_or_404(Title, id=title_id)
         review_id = self.kwargs.get('review_id')
         review = get_object_or_404(Review, id=review_id, title=title)
-        new_queryset = Comment.objects.filter(review=review)
-        return new_queryset
+        return Comment.objects.filter(review=review)
 
 
 class UserViewSet(viewsets.ModelViewSet):
