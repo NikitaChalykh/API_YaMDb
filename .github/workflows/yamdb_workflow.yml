@@ -21,7 +21,6 @@ jobs:
 
     - name: Test with flake8 and pytest
       run: |
-        cd .. 
         python -m flake8
         # pytest
 
