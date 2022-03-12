@@ -62,8 +62,6 @@ echo POSTGRES_USER=postgres  >> .env
 echo DB_HOST=db  >> .env
 
 echo DB_PORT=5432  >> .env
-
-echo SECRET_KEY=p&l%385148kslhtyn^##a1)ilz@4zqj=rq&agdol^##zgl9(vs >> .env
 ```
 
 4. Установка и запуск приложения в контейнерах (контейнер web загружактся из DockerHub):
