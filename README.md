@@ -21,7 +21,7 @@ API YaMDb (проект в Docker-контейнерах)
 
 Стек технологий
 ----------
-* Python 3.6
+* Python 3.8
 * Django 2.2
 * Django Rest Framework
 * Simple-JWT
@@ -29,6 +29,7 @@ API YaMDb (проект в Docker-контейнерах)
 * Nginx
 * gunicorn
 * Docker
+* GitHub Actions (CI/CD)
 
 Установка проекта из репозитория
 ----------
@@ -36,14 +37,16 @@ API YaMDb (проект в Docker-контейнерах)
 ```bash 
 git clone 'https://github.com/NikitaChalykh/infra_sp2.git'
 
-cd infra_sp2
+cd yamdb_final
 ```
+
 2. Cоздать и открыть файл ```.env``` с переменными окружения:
 ```bash 
 cd infra
 
 nano .env
 ```
+
 3. Заполнить ```.env``` файл с переменными окружения по примеру:
 ```bash 
 DB_ENGINE=django.db.backends.postgresql
@@ -55,10 +58,11 @@ DB_PORT=5432
 SECRET_KEY=p&l%385148kslhtyn^##a1)ilz@4zqj=rq&agdol^##zgl9(vs
 ```
 
-4. Установка приложения в контейнерах:
+4. Установка b запуск приложения в контейнерах (контейнер web загружактся из DockerHub):
 ```bash 
 docker-compose up -d
 ```
+
 5. Запуск миграций, создание суперюзера, сбор статики и заполнение БД:
 ```bash 
 docker-compose exec web python manage.py migrate
@@ -69,6 +73,7 @@ docker-compose exec web python manage.py collectstatic --no-input
 
 docker-compose exec web python manage.py loaddata fixtures.json
 ```
+
 Документация
 ----------
 Документация для API [доступна по ссылке](http://localhost/redoc/) после установки приложения.
