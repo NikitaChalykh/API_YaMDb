@@ -44,7 +44,7 @@ cd yamdb_final
 ```bash 
 cd infra
 
-nano .env
+touch .env
 ```
 
 3. Заполнить ```.env``` файл с переменными окружения по примеру:
@@ -58,7 +58,7 @@ DB_PORT=5432
 SECRET_KEY=p&l%385148kslhtyn^##a1)ilz@4zqj=rq&agdol^##zgl9(vs
 ```
 
-4. Установка b запуск приложения в контейнерах (контейнер web загружактся из DockerHub):
+4. Установка и запуск приложения в контейнерах (контейнер web загружактся из DockerHub):
 ```bash 
 docker-compose up -d
 ```
