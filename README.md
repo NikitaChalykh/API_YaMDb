@@ -13,6 +13,8 @@ API YaMDb (проект в Docker-контейнерах)
 Реализован REST API CRUD для моделей проекта, для аутентификации примненяется JWT-токен.
 В проекте реализованы пермишены, фильтрации, сортировки и поиск по запросам клиентов, реализована пагинация ответов от API, установлено ограничение количества запросов к API.
 
+Проект развернут на боевом сервере Yandex.Cloud. Реализовано CI и CD проекта. При пуше изменений в главную ветку проект автоматические терстируется на соотвествие требованиям PEP8 и проверятеся внутренними автотестами. После успешного прохождения тестов, на git-платформе собирается обзраз web-контейнера Docker и автоматически размешается в облачном хранилище DockerHub. Размещенный образ автоматически разворачивается на боевом сервере вмете с контейнером веб-сервера и базы данных.
+
 Системные требования
 ----------
 * Python 3.6+
@@ -49,13 +51,19 @@ touch .env
 
 3. Заполнить ```.env``` файл с переменными окружения по примеру:
 ```bash 
-DB_ENGINE=django.db.backends.postgresql
-DB_NAME=postgres 
-POSTGRES_USER=postgres 
-POSTGRES_PASSWORD=postgres
-DB_HOST=db 
-DB_PORT=5432 
-SECRET_KEY=p&l%385148kslhtyn^##a1)ilz@4zqj=rq&agdol^##zgl9(vs
+echo DB_ENGINE=django.db.backends.postgresql >> .env
+
+echo DB_NAME=postgres l >> .env
+
+echo POSTGRES_PASSWORD=postgres >> .env
+
+echo POSTGRES_USER=postgres  >> .env
+
+echo DB_HOST=db  >> .env
+
+echo DB_PORT=5432  >> .env
+
+echo SECRET_KEY=p&l%385148kslhtyn^##a1)ilz@4zqj=rq&agdol^##zgl9(vs >> .env
 ```
 
 4. Установка и запуск приложения в контейнерах (контейнер web загружактся из DockerHub):
