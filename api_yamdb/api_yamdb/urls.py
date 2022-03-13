@@ -9,19 +9,14 @@ from rest_framework import permissions
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('api.urls')),
-    path(
-        'redoc/',
-        TemplateView.as_view(template_name='redoc.html'),
-        name='redoc'
-    ),
 ]
 
 schema_view = get_schema_view(
     openapi.Info(
-        title="Cats API",
+        title="YaMDb",
         default_version='v1',
-        description="Документация для приложения cats проекта Kittygram",
-        contact=openapi.Contact(email="admin@kittygram.ru"),
+        description="Документация для приложения YaMDb",
+        contact=openapi.Contact(email="admin@admin.ru"),
         license=openapi.License(name="BSD License"),
     ),
     public=True,
