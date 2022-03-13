@@ -87,7 +87,3 @@ docker-compose exec web python manage.py collectstatic --no-input
 
 docker-compose exec web python manage.py loaddata fixtures.json
 ```
-
-Документация
-----------
-Документация для API [доступна по ссылке](http://nikitachalykh.ddns.net/docs/) после установки приложения.
