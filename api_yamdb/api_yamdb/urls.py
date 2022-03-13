@@ -23,6 +23,6 @@ schema_view = get_schema_view(
 )
 
 urlpatterns += [
-    url(r'^swagger/$', schema_view.with_ui('swagger', cache_timeout=0),
+    url(r'^docs/$', schema_view.with_ui('swagger', cache_timeout=0),
         name='schema-swagger-ui'),
 ]
