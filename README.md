@@ -90,4 +90,4 @@ docker-compose exec web python manage.py loaddata fixtures.json
 
 Документация
 ----------
-Документация для API [доступна по ссылке](http://nikitachalykh.ddns.net/swagger/) после установки приложения.
+Документация для API [доступна по ссылке](http://nikitachalykh.ddns.net/docs/) после установки приложения.
