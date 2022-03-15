@@ -1261,3 +1261,4 @@ components:
       description: Используется аутентификация с использованием JWT-токенов
       name: Bearer
       in: header
+
