@@ -2,7 +2,7 @@ name: Django-app workflow
 
 on: [push] 
 
-jobs:
+jobs: 
   tests:
     runs-on: ubuntu-latest
     steps:

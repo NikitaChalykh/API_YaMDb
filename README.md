@@ -1,4 +1,4 @@
-API YaMDb
+API YaMDb 
 ![example workflow](https://github.com/NikitaChalykh/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 =====
 
