@@ -82,3 +82,6 @@ docker-compose exec web python manage.py collectstatic --no-input
 
 docker-compose exec web python manage.py loaddata fixtures.json
 ```
+Документация к проекту
+----------
+Документация для API после установки доступна по адресу ```/redoc/```.
