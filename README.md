@@ -52,7 +52,7 @@ cd infra
 touch .env
 ```
 
-3. Заполнить ```.env``` файл с переменными окружения по примеру (SECRET_KEY см. в файле ```settnigs.py```):
+3. Заполнить ```.env``` файл с переменными окружения по примеру:
 ```bash 
 echo DB_ENGINE=django.db.backends.postgresql >> .env
 
